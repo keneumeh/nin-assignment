@@ -1,3 +1,4 @@
+// npm run start runs the code
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 
