@@ -17,14 +17,15 @@ async function bootstrap() {
   //gets the express platform from Nest app
   const express = app.getHttpAdapter().getInstance();
   // get name views?
-  const views = join(__dirname, '..', 'views');
+  const views = join(__dirname, '..', "views");
   //configure nunjucks
   nunjucks.configure(views,{express });
   //listens on server 
   const staticAssets = join(__dirname, '..', 'static'); 
   app.useStaticAssets(staticAssets);
-  
+
   await app.listen(3000);
+
 }
 // starts the application
 bootstrap();
