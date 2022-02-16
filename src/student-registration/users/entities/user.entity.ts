@@ -1,4 +1,5 @@
 // these reppresent the relationship
+import { Student } from "src/student-registration/students/entities/student.entity";
 import { Column, Entity, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 
 //@Entity  instructs nest to make the class a database table model
@@ -31,4 +32,7 @@ export class User {
   
     @Column({ default: true })
     isActive: boolean;
+
+    @OneToOne(type => Student, student => student.user)
+    student: Student;
 }
