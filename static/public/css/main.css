@@ -11,7 +11,7 @@
     padding: 10px 15px 10px 20px;
 }
 .navigation-bar {
-    background-color: blue;
+    background-color: rgb(13, 116, 38);
     color: white;
     display: flex;
     flex-direction: column-reverse;

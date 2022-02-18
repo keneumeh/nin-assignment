@@ -1,6 +1,6 @@
 // these reppresent the relationship
-import { Student } from "src/student-registration/students/entities/student.entity";
-import { Column, Entity, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+//import { Student } from "src/student-registration/students/entities/student.entity";
+import { Column, Entity, /*OneToOne,*/ PrimaryGeneratedColumn } from "typeorm";
 
 //@Entity  instructs nest to make the class a database table model
 @Entity()           
@@ -19,13 +19,22 @@ export class User {
     lastName: string;
 
     @Column()
-    email: string;
-
-    @Column()
     dateOfBirth: Date;
 
     @Column({nullable: true})
     nationality: string
+
+    @Column({nullable: true})
+    countryOfBirth: string
+
+    @Column({nullable: true})
+    stateOfBirth: string
+
+    @Column({nullable: true})
+    townOfBirth: string
+
+    @Column({nullable: true})
+    profession: string
 
     @Column({nullable: true})
     address: string
@@ -33,6 +42,7 @@ export class User {
     @Column({ default: true })
     isActive: boolean;
 
-    @OneToOne(type => Student, student => student.user)
-    student: Student;
+   /* @OneToOne(type => Student, student => student.user)
+    student: Student;*/
 }
+

@@ -6,22 +6,10 @@
     <div class="navigation-bar grid-item-row-1">
         <div class="navigation-bar-left">
             <div>
-                <a href="/" >Home</a>
-            </div>
-            <div>
-                <a href="/about-us">About Us</a>
-            </div>
-            <div>
-                <a href="/users/create" class="active">Add user</a>
+                <a href="/users/create" class="active">NIN registration</a>
             </div>
         </div>
-        <div class="navigation-bar-right">
-            <div>
-                <input type="search">
-                <button>Search</button>
-            </div>
-
-        </div>
+        
     </div>
     <div class="grid-item-row-2">
         <form class="box" id="createUserForm" action="/users" method="POST">
@@ -44,12 +32,7 @@
                         <input class="input" id="lastName" name="lastName" type="text" placeholder="Last name">
                     </div>
                 </div>
-                <div class="field">
-                    <label class="label">Email:</label>
-                    <div class="control has-icons-right">
-                        <input class="input" id="email" name="email" type="email" placeholder="Email" required>
-                    </div>
-                </div>
+                
                 <div class="field">
                     <label class="label">Date of birth:</label>
                     <div class="control has-icons-right">
@@ -63,9 +46,33 @@
                     </div>
                 </div>
                 <div class="field">
-                    <label class="label">Address:</label>
+                    <label class="label">Country of birth:</label>
                     <div class="control has-icons-right">
-                        <input class="input" id="address" name="address" type="text" placeholder="Address">
+                        <input class="input" id="countryOfBirth" name="countryOfBirth" type="text" placeholder="Country of birth">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">State of birth:</label>
+                    <div class="control has-icons-right">
+                        <input class="input" id="stateOfBirth" name="stateOfBirth" type="text" placeholder="State of birth">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Town of birth:</label>
+                    <div class="control has-icons-right">
+                        <input class="input" id="townOfBirth" name="townOfBirth" type="text" placeholder="Town of birth">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Profession:</label>
+                    <div class="control has-icons-right">
+                        <input class="input" id="profession" name="profession" type="text" placeholder="Profession">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Residence Address:</label>
+                    <div class="control has-icons-right">
+                        <input class="input" id="residenceAddress" name="residenceAddress" type="text" placeholder="Residence Address">
                     </div>
                 </div>
                 
@@ -121,12 +128,6 @@
         return false;
     }
 
-    const email = document.getElementById('email').value;
-    if (email == '') {
-        email.reportValidity();
-        return false;
-    }
-
     const dateOfBirth = document.getElementById('dateOfBirth').value;
     if (dateOfBirth == '') {
         dateOfBirth.reportValidity();
@@ -134,8 +135,16 @@
     }
     
     const nationality = document.getElementById('nationality').value;
+
+    const countryOfBirth = document.getElementById('countryOfBirth').value;
+
+    const stateOfBirth = document.getElementById('stateOfBirth').value;
+
+    const townOfBirth = document.getElementById('townOfBirth').value;
+
+    const profession = document.getElementById('profession').value;
     
-    const address = document.getElementById('address').value;
+    const residenceAddress = document.getElementById('residenceAddress').value;
 
 
     //start the button spinner
@@ -148,7 +157,7 @@
             'Content-Type': 'application/json'
         },
         //credentials: 'same-origin',
-        body: JSON.stringify({ firstName, middleName, lastName, email, dateOfBirth, nationality, address })
+        body: JSON.stringify({ firstName, middleName, lastName, email, dateOfBirth, nationality, profession, address })
     }
 
     //call fetch
