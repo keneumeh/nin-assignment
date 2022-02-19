@@ -31,4 +31,19 @@ export class LinkedIdentityController {
   remove(@Param('id') id: string) {
     return this.linkedIdentityService.remove(+id);
   }
+//this code is to control the relationship between the user and the linked identity created in the LI service.ts
+  @Patch(':linkedidentityId/user/userId')
+  setUserById(@Param('linkedidentityId') linkedidentityId: string, @Param('userId') userId: string) {
+    return this.linkedIdentityService.setUserById(+linkedidentityId, +userId);
+  }
+
+  @Delete(':linkedidentityId/user')
+  unsetUserById(@Param('linkedidentityId') linkedidentityId: string) {
+    return this.linkedIdentityService.unsetUserById(+linkedidentityId);
+  }
+
 }
+
+
+
+

@@ -3,8 +3,7 @@ export enum Gender {
     Male = 'male'
 }
 
-export enum ModeOfEntry{
-    UTME = 'UTME',
-    DE = 'Direct Entry',
-    Transfer = 'Transfer'
+export enum ModeOfReg{
+    MOBILE = 'MOBILE',
+    WEB = 'WEB'
 }
